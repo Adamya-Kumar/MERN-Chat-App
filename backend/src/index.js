@@ -26,7 +26,7 @@ app.get('/', (req, res) => {
     res.send('Hello World!');
 });
 
-if(process.nextTick.NODE_DEV === "production"){
+if(process.nextTick.NODE_ENV === "production"){
     app.use(express.static(path.join(__dirname,"../frontend/dist")));
 
     app.get("*",(req,res)=>{
